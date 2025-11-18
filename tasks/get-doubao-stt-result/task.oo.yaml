@@ -9,20 +9,18 @@ inputs_def:
     description: "Maximum number of polling attempts"
     json_schema:
       type: number
-    nullable: true
     value:
 
 
+    nullable: true
   - handle: poll_interval
     description: "Interval between polling attempts (seconds)"
     json_schema:
       type: number
-    nullable: true
     value:
 
 
-  - group: Optional
-    collapsed: true
+    nullable: true
 
 outputs_def:
   - handle: text

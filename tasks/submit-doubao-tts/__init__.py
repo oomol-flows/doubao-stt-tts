@@ -41,7 +41,9 @@ async def main(params: Inputs, context: Context) -> Outputs:
 
         # Extract task ID from response
         # API may return different formats, handle multiple cases
-        if "taskId" in result:
+        if "sessionID" in result:
+            task_id = result["sessionID"]
+        elif "taskId" in result:
             task_id = result["taskId"]
         elif "data" in result and "taskId" in result["data"]:
             task_id = result["data"]["taskId"]
