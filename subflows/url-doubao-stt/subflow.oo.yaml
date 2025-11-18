@@ -1,4 +1,6 @@
 title: Url Doubao STT
+description: Transcribe audio from URL to text using Doubao STT. Directly
+  processes audio files accessible via URL.
 
 nodes:
   - node_id: submit-doubao-stt#1

@@ -1,4 +1,7 @@
 title: File Doubao STT
+description: Converts audio files to text using Doubao Speech-to-Text API. Takes
+  a local audio file, uploads it to cloud storage, submits it for transcription,
+  and returns both the full transcribed text and word-level timestamps.
 
 nodes:
   - node_id: submit-doubao-stt#1
@@ -41,13 +44,14 @@ inputs_def:
       type: string
       ui:widget: file
     nullable: false
+    description: Local path to the audio file to be transcribed
     value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
     executor_name: nodejs
   - handle: format
     json_schema:
       type: string
     nullable: false
-    description: Audio format (e.g., mp3, wav, m4a)
+    description: Audio format of the input file (e.g., mp3, wav, m4a, flac)
     value: mp3
     executor_name: python
 outputs_def:

@@ -1,4 +1,7 @@
 title: Doubao TTS To Url
+description: Convert text to speech using Doubao TTS and return the audio URL.
+  Supports multiple voice options in Chinese and English.
+
 nodes:
   - node_id: submit-doubao-tts#1
     task: self::submit-doubao-tts

@@ -26,4 +26,6 @@ executor:
 
 title: "Submit Doubao STT"
 icon: ":carbon:microphone:"
-description: "Submit an audio file to Doubao Speech-to-Text service and get a task ID for result retrieval"
+description: "Submit an audio file to Doubao Speech-to-Text service and get a
+  task ID for result retrieval"
+private: true

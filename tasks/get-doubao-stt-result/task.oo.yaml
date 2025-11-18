@@ -48,3 +48,4 @@ title: "Get Doubao STT Result"
 icon: ":carbon:text-align-left:"
 description: "Poll and retrieve the speech-to-text result using task ID.
   Supports automatic retry with configurable intervals."
+private: true

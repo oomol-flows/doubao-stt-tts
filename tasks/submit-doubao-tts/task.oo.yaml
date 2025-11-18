@@ -75,3 +75,4 @@ title: "Submit Doubao TTS"
 icon: ":carbon:volume-up:"
 description: "Submit text to Doubao Text-to-Speech service and get a task ID for
   audio retrieval"
+private: true

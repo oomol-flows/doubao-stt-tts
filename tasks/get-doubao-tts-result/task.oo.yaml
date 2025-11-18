@@ -43,3 +43,4 @@ title: "Get Doubao TTS Result"
 icon: ":carbon:data-base:"
 description: "Poll and retrieve the text-to-speech audio result using task ID.
   Supports automatic retry with configurable intervals."
+private: true
