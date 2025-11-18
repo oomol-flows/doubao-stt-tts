@@ -1,0 +1,39 @@
+{
+  "nodes": {
+    "submit-doubao-tts#1": {
+      "contentWidth": 643.9044346546419,
+      "rfNode": {
+        "position": {
+          "x": 0,
+          "y": 26
+        }
+      }
+    },
+    "get-doubao-tts-result#1": {
+      "rfNode": {
+        "position": {
+          "x": 710,
+          "y": 0
+        }
+      }
+    }
+  },
+  "pseudoNodes": {
+    "input": {
+      "rfNode": {
+        "position": {
+          "x": -402.9989048459388,
+          "y": 0
+        }
+      }
+    },
+    "output": {
+      "rfNode": {
+        "position": {
+          "x": 1327.2691831999264,
+          "y": 75.75134081468549
+        }
+      }
+    }
+  }
+}

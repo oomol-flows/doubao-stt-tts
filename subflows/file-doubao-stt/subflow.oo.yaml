@@ -1,0 +1,74 @@
+title: File Doubao STT
+
+nodes:
+  - node_id: submit-doubao-stt#1
+    task: self::submit-doubao-stt
+    inputs_from:
+      - handle: audio_url
+        value: "https://vision-oomol-flows.oss-cn-hangzhou.aliyuncs.com/%E4%B8%AD%E5%9B\
+          %BD%E7%A4%BE%E4%BC%9A%E5%90%84%E9%98%B6%E7%BA%A7%E7%9A%84%E5%88%86%E6\
+          %9E%90.mp3"
+        from_node:
+          - node_id: upload-to-cloud#1
+            output_handle: remote_url
+      - handle: format
+        value: "mp3"
+        from_flow:
+          - input_handle: format
+
+  - node_id: get-doubao-stt-result#1
+    task: self::get-doubao-stt-result
+    inputs_from:
+      - handle: task_id
+        from_node:
+          - node_id: submit-doubao-stt#1
+            output_handle: task_id
+      - handle: max_retries
+        value: 60
+      - handle: poll_interval
+        value: 2
+  - node_id: upload-to-cloud#1
+    title: "上传文件到云端 #1"
+    inputs_from:
+      - handle: file
+        value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
+        from_flow:
+          - input_handle: file
+    task: upload-to-cloud::upload-to-cloud
+inputs_def:
+  - handle: file
+    json_schema:
+      type: string
+      ui:widget: file
+    nullable: false
+    value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
+    executor_name: nodejs
+  - handle: format
+    json_schema:
+      type: string
+    nullable: false
+    description: Audio format (e.g., mp3, wav, m4a)
+    value: mp3
+    executor_name: python
+outputs_def:
+  - handle: text
+    json_schema:
+      type: string
+    nullable: false
+    description: Transcribed text from the audio
+    executor_name: python
+  - handle: words
+    json_schema:
+      type: array
+    nullable: false
+    description: Word-level transcription with timestamps
+    executor_name: python
+outputs_from:
+  - handle: text
+    from_node:
+      - node_id: get-doubao-stt-result#1
+        output_handle: text
+  - handle: words
+    from_node:
+      - node_id: get-doubao-stt-result#1
+        output_handle: words

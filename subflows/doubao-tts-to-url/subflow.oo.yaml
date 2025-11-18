@@ -1,0 +1,99 @@
+title: Doubao TTS To Url
+nodes:
+  - node_id: submit-doubao-tts#1
+    task: self::submit-doubao-tts
+    inputs_from:
+      - handle: text
+        value: "让我把这段文字读给你听"
+        from_flow:
+          - input_handle: text
+      - handle: voice
+        value: "zh_female_tianxinxiaomei_emo_v2_mars_bigtts"
+        from_flow:
+          - input_handle: voice
+
+  - node_id: get-doubao-tts-result#1
+    task: self::get-doubao-tts-result
+    inputs_from:
+      - handle: task_id
+        from_node:
+          - node_id: submit-doubao-tts#1
+            output_handle: task_id
+      - handle: max_retries
+        value: 30
+      - handle: poll_interval
+        value: 2
+inputs_def:
+  - handle: text
+    json_schema:
+      type: string
+      ui:widget: text
+    nullable: false
+    description: Text content to convert to speech
+    value: 让我把这段文字读给你听
+    executor_name: python
+  - handle: voice
+    json_schema:
+      type: string
+      ui:options:
+        title: Voice
+        labels:
+          - 冷酷哥哥 - 中文
+          - Candice - American English
+          - 甜心小美 - 中文
+          - Serena - American English
+          - 高冷御姐 - 中文
+          - Glen - American English
+          - 傲娇霸总 - 中文
+          - Sylus - American English
+          - 广州德哥 - 中文
+          - Corey - British English
+          - 京腔侃爷 - 中文
+          - Nadia - British English
+          - 邻居阿姨 - 中文
+          - 优柔公子 - 中文
+          - 儒雅男友 - 中文
+          - 俊朗男友 - 中文
+          - 北京小爷 - 中文
+          - 柔美女友 - 中文
+          - 阳光青年 - 中文
+          - 魅力女友 - 中文
+          - 深夜播客 - 中文
+      enum:
+        - zh_male_lengkugege_emo_v2_mars_bigtts
+        - en_female_candice_emo_v2_mars_bigtts
+        - zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+        - en_female_skye_emo_v2_mars_bigtts
+        - zh_female_gaolengyujie_emo_v2_mars_bigtts
+        - en_male_glen_emo_v2_mars_bigtts
+        - zh_male_aojiaobazong_emo_v2_mars_bigtts
+        - en_male_sylus_emo_v2_mars_bigtts
+        - zh_male_guangzhoudege_emo_mars_bigtts
+        - en_male_corey_emo_v2_mars_bigtts
+        - zh_male_jingqiangkanye_emo_mars_bigtts
+        - en_female_nadia_tips_emo_v2_mars_bigtts
+        - zh_female_linjuayi_emo_v2_mars_bigtts
+        - zh_male_yourougongzi_emo_v2_mars_bigtts
+        - zh_male_ruyayichen_emo_v2_mars_bigtts
+        - zh_male_junlangnanyo_emo_v2_mars_bigtts
+        - zh_male_beijingxiaoye_emo_v2_mars_bigtts
+        - zh_female_roumeinvyou_emo_v2_mars_bigtts
+        - zh_male_yangguangqingnian_emo_v2_mars_bigtts
+        - zh_female_meilinvyou_emo_v2_mars_bigtts
+        - zh_male_shenyeboke_emo_v2_mars_bigtts
+    nullable: false
+    description: Voice selection for text-to-speech
+    value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+    executor_name: python
+outputs_def:
+  - handle: audio_url
+    json_schema:
+      type: string
+    nullable: false
+    description: URL of the generated audio file
+    executor_name: python
+outputs_from:
+  - handle: audio_url
+    from_node:
+      - node_id: get-doubao-tts-result#1
+        output_handle: audio_url

@@ -1,0 +1,63 @@
+title: Url Doubao STT
+
+nodes:
+  - node_id: submit-doubao-stt#1
+    task: self::submit-doubao-stt
+    inputs_from:
+      - handle: audio_url
+        from_flow:
+          - input_handle: audio_url
+        from_node:
+          []
+      - handle: format
+        value: "mp3"
+        from_flow:
+          - input_handle: format
+
+  - node_id: get-doubao-stt-result#1
+    task: self::get-doubao-stt-result
+    inputs_from:
+      - handle: task_id
+        from_node:
+          - node_id: submit-doubao-stt#1
+            output_handle: task_id
+      - handle: max_retries
+        value: 60
+      - handle: poll_interval
+        value: 2
+inputs_def:
+  - handle: audio_url
+    json_schema:
+      type: string
+    nullable: false
+    description: URL of the audio file to transcribe
+    executor_name: python
+  - handle: format
+    json_schema:
+      type: string
+    nullable: false
+    description: Audio format (e.g., mp3, wav, m4a)
+    value: mp3
+    executor_name: python
+outputs_def:
+  - handle: text
+    json_schema:
+      type: string
+    nullable: false
+    description: Transcribed text from the audio
+    executor_name: python
+  - handle: words
+    json_schema:
+      type: array
+    nullable: false
+    description: Word-level transcription with timestamps
+    executor_name: python
+outputs_from:
+  - handle: text
+    from_node:
+      - node_id: get-doubao-stt-result#1
+        output_handle: text
+  - handle: words
+    from_node:
+      - node_id: get-doubao-stt-result#1
+        output_handle: words
