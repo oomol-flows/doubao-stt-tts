@@ -1,0 +1,29 @@
+inputs_def:
+  - handle: audio_url
+    description: "URL of the audio file to transcribe"
+    json_schema:
+      type: string
+    nullable: false
+
+  - handle: format
+    description: "Audio format (e.g., mp3, wav, m4a)"
+    json_schema:
+      type: string
+    nullable: false
+    value: "mp3"
+
+outputs_def:
+  - handle: task_id
+    description: "Task ID for retrieving the transcription result"
+    json_schema:
+      type: string
+
+executor:
+  name: python
+  options:
+    entry: __init__.py
+    spawn: false
+
+title: "Submit Doubao STT"
+icon: ":carbon:microphone:"
+description: "Submit an audio file to Doubao Speech-to-Text service and get a task ID for result retrieval"
