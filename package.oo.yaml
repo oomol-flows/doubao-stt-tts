@@ -1,4 +1,8 @@
 version: 0.0.1
+name: doubao_stt_tts
+displayName: Doubao STT TTS
+description: Comprehensive speech-to-text and text-to-speech package powered by
+  Doubao AI with multiple voices and formats.
 icon: ./icon.png
 scripts:
   bootstrap: |
@@ -7,3 +11,5 @@ scripts:
 dependencies:
   upload-to-cloud: 0.0.5
   downloader: 0.1.1
+releaseNotes: init
+repository: https://github.com/oomol-flows/doubao-stt-tts.git
