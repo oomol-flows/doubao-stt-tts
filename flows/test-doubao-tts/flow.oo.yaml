@@ -1,0 +1,21 @@
+title: Test Doubao TTS
+nodes:
+  - node_id: submit-doubao-tts#1
+    task: self::submit-doubao-tts
+    inputs_from:
+      - handle: text
+        value: "让我把这段文字读给你听"
+      - handle: voice
+        value: "zh_female_tianxinxiaomei_emo_v2_mars_bigtts"
+
+  - node_id: get-doubao-tts-result#1
+    task: self::get-doubao-tts-result
+    inputs_from:
+      - handle: task_id
+        from_node:
+          - node_id: submit-doubao-tts#1
+            output_handle: task_id
+      - handle: max_retries
+        value: 30
+      - handle: poll_interval
+        value: 2

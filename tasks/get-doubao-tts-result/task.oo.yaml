@@ -1,0 +1,47 @@
+inputs_def:
+  - handle: task_id
+    description: "Task ID returned from submit request"
+    json_schema:
+      type: string
+    nullable: false
+
+  - handle: max_retries
+    description: "Maximum number of polling attempts"
+    json_schema:
+      type: number
+    nullable: true
+    value:
+
+
+  - handle: poll_interval
+    description: "Interval between polling attempts (seconds)"
+    json_schema:
+      type: number
+    nullable: true
+    value:
+
+
+  - group: Optional
+    collapsed: true
+
+outputs_def:
+  - handle: audio_url
+    description: "URL of the generated audio file"
+    json_schema:
+      type: string
+
+  - handle: full_result
+    description: "Full API response data"
+    json_schema:
+      type: object
+
+executor:
+  name: python
+  options:
+    entry: __init__.py
+    spawn: false
+
+title: "Get Doubao TTS Result"
+icon: ":carbon:data-base:"
+description: "Poll and retrieve the text-to-speech audio result using task ID.
+  Supports automatic retry with configurable intervals."
