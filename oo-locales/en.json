@@ -49,5 +49,7 @@
   "url-of-the-audio-file-to-transcribe2": "URL of the audio file to transcribe",
   "audio-format-e-g-mp3-wav-m4a2": "Audio format (e.g., mp3, wav, m4a)",
   "transcribed-text-from-the-audio3": "Transcribed text from the audio",
-  "word-level-transcription-with-timestamps3": "Word-level transcription with timestamps"
+  "word-level-transcription-with-timestamps3": "Word-level transcription with timestamps",
+  "display-name2": "Doubao STT TTS",
+  "description2": "Comprehensive speech-to-text and text-to-speech package powered by Doubao AI with multiple voices and formats."
 }

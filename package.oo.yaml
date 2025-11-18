@@ -1,8 +1,7 @@
 version: 0.0.1
 name: doubao_stt_tts
-displayName: Doubao STT TTS
-description: Comprehensive speech-to-text and text-to-speech package powered by
-  Doubao AI with multiple voices and formats.
+displayName: "%display-name2%"
+description: "%description2%"
 icon: ./icon.png
 scripts:
   bootstrap: |
