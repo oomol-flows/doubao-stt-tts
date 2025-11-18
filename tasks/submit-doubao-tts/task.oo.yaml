@@ -13,34 +13,40 @@ inputs_def:
       ui:options:
         title: Voice
         labels:
-          - "冷酷哥哥（多情感）- 中文"
-          - "甜心小美（多情感）- 中文"
-          - "高冷御姐（多情感）- 中文"
-          - "傲娇霸总（多情感）- 中文"
-          - "广州德哥（多情感）- 中文"
-          - "京腔侃爷（多情感）- 中文"
-          - "邻居阿姨（多情感）- 中文"
-          - "优柔公子（多情感）- 中文"
-          - "儒雅男友（多情感）- 中文"
-          - "俊朗男友（多情感）- 中文"
-          - "北京小爷（多情感）- 中文"
-          - "柔美女友（多情感）- 中文"
-          - "阳光青年（多情感）- 中文"
-          - "魅力女友（多情感）- 中文"
+          - "冷酷哥哥 - 中文"
+          - "Candice - American English"
+          - "甜心小美 - 中文"
+          - "Serena - American English"
+          - "高冷御姐 - 中文"
+          - "Glen - American English"
+          - "傲娇霸总 - 中文"
+          - "Sylus - American English"
+          - "广州德哥 - 中文"
+          - "Corey - British English"
+          - "京腔侃爷 - 中文"
+          - "Nadia - British English"
+          - "邻居阿姨 - 中文"
+          - "优柔公子 - 中文"
+          - "儒雅男友 - 中文"
+          - "俊朗男友 - 中文"
+          - "北京小爷 - 中文"
+          - "柔美女友 - 中文"
+          - "阳光青年 - 中文"
+          - "魅力女友 - 中文"
           - "深夜播客 - 中文"
-          - "Candice - 美式英语"
-          - "Serena - 美式英语"
-          - "Glen - 美式英语"
-          - "Sylus - 美式英语"
-          - "Corey - 英式英语"
-          - "Nadia - 英式英语"
       enum:
         - zh_male_lengkugege_emo_v2_mars_bigtts
+        - en_female_candice_emo_v2_mars_bigtts
         - zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+        - en_female_skye_emo_v2_mars_bigtts
         - zh_female_gaolengyujie_emo_v2_mars_bigtts
+        - en_male_glen_emo_v2_mars_bigtts
         - zh_male_aojiaobazong_emo_v2_mars_bigtts
+        - en_male_sylus_emo_v2_mars_bigtts
         - zh_male_guangzhoudege_emo_mars_bigtts
+        - en_male_corey_emo_v2_mars_bigtts
         - zh_male_jingqiangkanye_emo_mars_bigtts
+        - en_female_nadia_tips_emo_v2_mars_bigtts
         - zh_female_linjuayi_emo_v2_mars_bigtts
         - zh_male_yourougongzi_emo_v2_mars_bigtts
         - zh_male_ruyayichen_emo_v2_mars_bigtts
@@ -50,12 +56,6 @@ inputs_def:
         - zh_male_yangguangqingnian_emo_v2_mars_bigtts
         - zh_female_meilinvyou_emo_v2_mars_bigtts
         - zh_male_shenyeboke_emo_v2_mars_bigtts
-        - en_female_candice_emo_v2_mars_bigtts
-        - en_female_skye_emo_v2_mars_bigtts
-        - en_male_glen_emo_v2_mars_bigtts
-        - en_male_sylus_emo_v2_mars_bigtts
-        - en_male_corey_emo_v2_mars_bigtts
-        - en_female_nadia_tips_emo_v2_mars_bigtts
     value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
     nullable: false
 
