@@ -1,7 +1,5 @@
-title: File Doubao STT
-description: Converts audio files to text using Doubao Speech-to-Text API. Takes
-  a local audio file, uploads it to cloud storage, submits it for transcription,
-  and returns both the full transcribed text and word-level timestamps.
+title: "%file-doubao-stt%"
+description: "%converts-audio-files-to-text-using-doubao-speech-to-text-api-tak%"
 
 nodes:
   - node_id: submit-doubao-stt#1
@@ -31,7 +29,7 @@ nodes:
       - handle: poll_interval
         value: 2
   - node_id: upload-to-cloud#1
-    title: "上传文件到云端 #1"
+    title: "%12%"
     inputs_from:
       - handle: file
         value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
@@ -40,32 +38,32 @@ nodes:
     task: upload-to-cloud::upload-to-cloud
 inputs_def:
   - handle: file
+    description: "%local-path-to-the-audio-file-to-be-transcribed%"
     json_schema:
       type: string
       ui:widget: file
-    nullable: false
-    description: Local path to the audio file to be transcribed
     value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
+    nullable: false
     executor_name: nodejs
   - handle: format
+    description: "%audio-format-of-the-input-file-e-g-mp3-wav-m4a-flac%"
     json_schema:
       type: string
-    nullable: false
-    description: Audio format of the input file (e.g., mp3, wav, m4a, flac)
     value: mp3
+    nullable: false
     executor_name: python
 outputs_def:
   - handle: text
+    description: "%transcribed-text-from-the-audio2%"
     json_schema:
       type: string
     nullable: false
-    description: Transcribed text from the audio
     executor_name: python
   - handle: words
+    description: "%word-level-transcription-with-timestamps2%"
     json_schema:
       type: array
     nullable: false
-    description: Word-level transcription with timestamps
     executor_name: python
 outputs_from:
   - handle: text

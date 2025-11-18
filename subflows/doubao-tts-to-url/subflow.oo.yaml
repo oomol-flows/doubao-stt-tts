@@ -1,6 +1,5 @@
-title: Doubao TTS To Url
-description: Convert text to speech using Doubao TTS and return the audio URL.
-  Supports multiple voice options in Chinese and English.
+title: "%doubao-tts-to-url%"
+description: "%convert-text-to-speech-using-doubao-tts-and-return-the-audio-url%"
 
 nodes:
   - node_id: submit-doubao-tts#1
@@ -28,14 +27,15 @@ nodes:
         value: 2
 inputs_def:
   - handle: text
+    description: "%text-content-to-convert-to-speech3%"
     json_schema:
       type: string
       ui:widget: text
-    nullable: false
-    description: Text content to convert to speech
     value: 让我把这段文字读给你听
+    nullable: false
     executor_name: python
   - handle: voice
+    description: "%voice-selection-for-text-to-speech3%"
     json_schema:
       type: string
       ui:options:
@@ -84,16 +84,15 @@ inputs_def:
         - zh_male_yangguangqingnian_emo_v2_mars_bigtts
         - zh_female_meilinvyou_emo_v2_mars_bigtts
         - zh_male_shenyeboke_emo_v2_mars_bigtts
-    nullable: false
-    description: Voice selection for text-to-speech
     value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+    nullable: false
     executor_name: python
 outputs_def:
   - handle: audio_url
+    description: "%url-of-the-generated-audio-file2%"
     json_schema:
       type: string
     nullable: false
-    description: URL of the generated audio file
     executor_name: python
 outputs_from:
   - handle: audio_url

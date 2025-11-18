@@ -1,6 +1,5 @@
-title: Url Doubao STT
-description: Transcribe audio from URL to text using Doubao STT. Directly
-  processes audio files accessible via URL.
+title: "%url-doubao-stt%"
+description: "%transcribe-audio-from-url-to-text-using-doubao-stt-directly-proc%"
 
 nodes:
   - node_id: submit-doubao-stt#1
@@ -29,30 +28,30 @@ nodes:
         value: 2
 inputs_def:
   - handle: audio_url
+    description: "%url-of-the-audio-file-to-transcribe2%"
     json_schema:
       type: string
     nullable: false
-    description: URL of the audio file to transcribe
     executor_name: python
   - handle: format
+    description: "%audio-format-e-g-mp3-wav-m4a2%"
     json_schema:
       type: string
-    nullable: false
-    description: Audio format (e.g., mp3, wav, m4a)
     value: mp3
+    nullable: false
     executor_name: python
 outputs_def:
   - handle: text
     json_schema:
       type: string
     nullable: false
-    description: Transcribed text from the audio
+    description: "%transcribed-text-from-the-audio3%"
     executor_name: python
   - handle: words
     json_schema:
       type: array
     nullable: false
-    description: Word-level transcription with timestamps
+    description: "%word-level-transcription-with-timestamps3%"
     executor_name: python
 outputs_from:
   - handle: text

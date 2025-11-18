@@ -1,6 +1,5 @@
-title: Doubao TTS To File
-description: Convert text to speech using Doubao TTS and download the audio file
-  locally. Supports multiple voice options.
+title: "%doubao-tts-to-file%"
+description: "%convert-text-to-speech-using-doubao-tts-and-download-the-audio-f%"
 
 nodes:
   - node_id: submit-doubao-tts#1
@@ -27,7 +26,7 @@ nodes:
       - handle: poll_interval
         value: 2
   - node_id: file-downloader#1
-    title: "下载文件 #1"
+    title: "%1%"
     inputs_from:
       - handle: url
         from_node:
@@ -65,14 +64,15 @@ nodes:
     subflow: downloader::file-downloader
 inputs_def:
   - handle: text
+    description: "%text-content-to-convert-to-speech2%"
     json_schema:
       type: string
       ui:widget: text
-    nullable: false
-    description: Text content to convert to speech
     value: 让我把这段文字读给你听
+    nullable: false
     executor_name: python
   - handle: voice
+    description: "%voice-selection-for-text-to-speech2%"
     json_schema:
       type: string
       ui:options:
@@ -121,16 +121,15 @@ inputs_def:
         - zh_male_yangguangqingnian_emo_v2_mars_bigtts
         - zh_female_meilinvyou_emo_v2_mars_bigtts
         - zh_male_shenyeboke_emo_v2_mars_bigtts
-    nullable: false
-    description: Voice selection for text-to-speech
     value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+    nullable: false
     executor_name: python
   - handle: saved_path
     json_schema:
       type: string
       ui:widget: save
-    nullable: true
     value:
+    nullable: true
     executor_name: python
 outputs_def:
   - handle: saved_path
@@ -138,7 +137,7 @@ outputs_def:
       type: string
       ui:widget: save
     nullable: false
-    description: Path of the successfully downloaded file
+    description: "%path-of-the-successfully-downloaded-file%"
     executor_name: python
 outputs_from:
   - handle: saved_path

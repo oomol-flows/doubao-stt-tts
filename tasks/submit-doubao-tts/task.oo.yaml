@@ -1,13 +1,13 @@
 inputs_def:
   - handle: text
-    description: "Text content to convert to speech"
+    description: "%text-content-to-convert-to-speech%"
     json_schema:
       type: string
       ui:widget: text
     nullable: false
 
   - handle: voice
-    description: "Voice selection for text-to-speech"
+    description: "%voice-selection-for-text-to-speech%"
     json_schema:
       type: string
       ui:options:
@@ -61,7 +61,7 @@ inputs_def:
 
 outputs_def:
   - handle: task_id
-    description: "Task ID for retrieving the TTS audio result"
+    description: "%task-id-for-retrieving-the-tts-audio-result%"
     json_schema:
       type: string
 
@@ -71,8 +71,7 @@ executor:
     entry: __init__.py
     spawn: false
 
-title: "Submit Doubao TTS"
+title: "%submit-doubao-tts%"
 icon: ":carbon:volume-up:"
-description: "Submit text to Doubao Text-to-Speech service and get a task ID for
-  audio retrieval"
+description: "%submit-text-to-doubao-text-to-speech-service-and-get-a-task-id-f%"
 private: true

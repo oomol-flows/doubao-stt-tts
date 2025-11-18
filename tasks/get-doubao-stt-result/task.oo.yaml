@@ -1,40 +1,36 @@
 inputs_def:
   - handle: task_id
-    description: "Task ID returned from submit request"
+    description: "%task-id-returned-from-submit-request%"
     json_schema:
       type: string
     nullable: false
 
   - handle: max_retries
-    description: "Maximum number of polling attempts"
+    description: "%maximum-number-of-polling-attempts%"
     json_schema:
       type: number
     value:
-
-
     nullable: true
   - handle: poll_interval
-    description: "Interval between polling attempts (seconds)"
+    description: "%interval-between-polling-attempts-seconds%"
     json_schema:
       type: number
     value:
-
-
     nullable: true
 
 outputs_def:
   - handle: text
-    description: "Transcribed text from the audio"
+    description: "%transcribed-text-from-the-audio%"
     json_schema:
       type: string
 
   - handle: words
-    description: "Word-level transcription with timestamps"
+    description: "%word-level-transcription-with-timestamps%"
     json_schema:
       type: array
 
   - handle: full_result
-    description: "Full API response data"
+    description: "%full-api-response-data%"
     json_schema:
       type: object
 
@@ -44,8 +40,7 @@ executor:
     entry: __init__.py
     spawn: false
 
-title: "Get Doubao STT Result"
+title: "%get-doubao-stt-result%"
 icon: ":carbon:text-align-left:"
-description: "Poll and retrieve the speech-to-text result using task ID.
-  Supports automatic retry with configurable intervals."
+description: "%poll-and-retrieve-the-speech-to-text-result-using-task-id-suppor%"
 private: true
