@@ -3,24 +3,24 @@
     "submit-doubao-stt#1": {
       "rfNode": {
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 972,
+          "y": 62.5
         }
       }
     },
     "get-doubao-stt-result#1": {
       "rfNode": {
         "position": {
-          "x": 600,
-          "y": 0
+          "x": 1458,
+          "y": 22
         }
       }
     },
     "upload-to-cloud#1": {
       "rfNode": {
         "position": {
-          "x": -550.7449194856847,
-          "y": 27
+          "x": 486,
+          "y": 0
         }
       }
     }
@@ -29,16 +29,16 @@
     "input": {
       "rfNode": {
         "position": {
-          "x": -550.7449194856847,
-          "y": -500
+          "x": 0,
+          "y": 121
         }
       }
     },
     "output": {
       "rfNode": {
         "position": {
-          "x": 449.2550805143153,
-          "y": -500
+          "x": 1944,
+          "y": 121
         }
       }
     }
