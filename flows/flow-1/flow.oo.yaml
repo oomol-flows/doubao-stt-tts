@@ -5,7 +5,7 @@ nodes:
       - handle: text
         value: 让我把这段文字读给你听
       - handle: voice
-        value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+        value: zh_male_lengkugege_emo_v2_mars_bigtts
       - handle: saved_path
         value: null
     subflow: self::doubao-tts-to-file
