@@ -18,7 +18,7 @@ async def main(params: Inputs, context: Context) -> Outputs:
     """Poll and retrieve the STT result from Doubao service."""
 
     task_id = params["task_id"]
-    max_retries = params.get("max_retries", 30)
+    max_retries = params.get("max_retries", 900)
     poll_interval = params.get("poll_interval", 2)
 
     url = f"https://fusion-api.oomol.com/v1/doubao-stt/result/{task_id}"
@@ -38,9 +38,6 @@ async def main(params: Inputs, context: Context) -> Outputs:
             response.raise_for_status()
 
             result = response.json()
-
-            # Print the response for debugging
-            print(f"[DEBUG] Retry {retry_count + 1}/{max_retries}, Response: {result}")
 
             # Get state from response
             state = result.get("state", "unknown")
@@ -69,16 +66,9 @@ async def main(params: Inputs, context: Context) -> Outputs:
             }
 
         except requests.exceptions.RequestException as e:
-            # Network error, retry
-            print(f"[DEBUG] Request error: {e}, retrying...")
             retry_count += 1
             if retry_count < max_retries:
                 time.sleep(poll_interval)
-            continue
+                continue
 
-    # Max retries reached
-    return {
-        "text": "",
-        "words": [],
-        "full_result": {"error": f"Max retries ({max_retries}) reached"}
-    }
+    raise TimeoutError(f"STT task still processing after {max_retries} retries (timeout)")

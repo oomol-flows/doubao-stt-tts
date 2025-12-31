@@ -22,7 +22,7 @@ nodes:
           - node_id: submit-doubao-tts#1
             output_handle: task_id
       - handle: max_retries
-        value: 30
+        value: 3600
       - handle: poll_interval
         value: 2
 inputs_def:

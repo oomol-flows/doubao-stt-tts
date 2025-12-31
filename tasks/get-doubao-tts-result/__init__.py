@@ -12,13 +12,12 @@ class Outputs(typing.TypedDict):
 from oocana import Context
 import requests
 import time
-import datetime
 
 async def main(params: Inputs, context: Context) -> Outputs:
     """Poll and retrieve the TTS result from Doubao service."""
 
     task_id = params["task_id"]
-    max_retries = params.get("max_retries", 30)
+    max_retries = params.get("max_retries", 900)
     poll_interval = params.get("poll_interval", 2)
 
     url = f"https://fusion-api.oomol.com/v1/doubao-tts/result/{task_id}"
@@ -38,10 +37,6 @@ async def main(params: Inputs, context: Context) -> Outputs:
             response.raise_for_status()
 
             result = response.json()
-
-            # Print the response for debugging
-            t = datetime.datetime.now()
-            print(f"[DEBUG {t}] Retry {retry_count + 1}/{max_retries}, Response: {result}")
 
             # Get state from response
             state = result.get("state", "unknown")
@@ -86,34 +81,20 @@ async def main(params: Inputs, context: Context) -> Outputs:
             }
 
         except requests.exceptions.Timeout as e:
-            # Timeout error
-            print(f"[DEBUG] Request timeout: {e}, retrying...")
             retry_count += 1
             if retry_count < max_retries:
                 time.sleep(poll_interval)
                 continue
-            error_msg = f"Request timeout after {max_retries} retries"
-            print(f"[ERROR] {error_msg}")
-            raise TimeoutError(error_msg) from e
+            raise TimeoutError(f"Request timeout after {max_retries} retries") from e
 
         except requests.exceptions.HTTPError as e:
-            # HTTP error (4xx, 5xx)
-            error_msg = f"HTTP Error {response.status_code}: {response.text}"
-            print(f"[ERROR] {error_msg}")
-            raise ValueError(error_msg) from e
+            raise ValueError(f"HTTP Error {response.status_code}: {response.text}") from e
 
         except requests.exceptions.RequestException as e:
-            # Other network errors, retry
-            print(f"[DEBUG] Request error: {e}, retrying...")
             retry_count += 1
             if retry_count < max_retries:
                 time.sleep(poll_interval)
                 continue
-            error_msg = f"Network error after {max_retries} retries: {str(e)}"
-            print(f"[ERROR] {error_msg}")
-            raise ConnectionError(error_msg) from e
+            raise ConnectionError(f"Network error after {max_retries} retries: {str(e)}") from e
 
-    # Max retries reached (processing state timeout)
-    error_msg = f"TTS task still processing after {max_retries} retries (timeout)"
-    print(f"[ERROR] {error_msg}")
-    raise TimeoutError(error_msg)
+    raise TimeoutError(f"TTS task still processing after {max_retries} retries (timeout)")

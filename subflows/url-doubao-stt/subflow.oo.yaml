@@ -23,7 +23,7 @@ nodes:
           - node_id: submit-doubao-stt#1
             output_handle: task_id
       - handle: max_retries
-        value: 60
+        value: 3600
       - handle: poll_interval
         value: 2
 inputs_def:
