@@ -41,6 +41,9 @@ async def main(params: Inputs, context: Context) -> Outputs:
             # Get state from response
             state = result.get("state", "unknown")
 
+            # Print status for debugging
+            print(f"[TTS Polling] Attempt {retry_count + 1}/{max_retries} - State: {state}")
+
             # If state is 'processing', continue polling
             if state == "processing":
                 progress = min(int((retry_count / max_retries) * 90), 90)
@@ -72,6 +75,8 @@ async def main(params: Inputs, context: Context) -> Outputs:
             else:
                 # If no audio URL found, return the full result
                 audio_url = ""
+
+            print(f"[TTS Polling] Task completed - State: {state}, Audio URL: {audio_url[:50] if audio_url else 'None'}...")
 
             context.report_progress(100)
 

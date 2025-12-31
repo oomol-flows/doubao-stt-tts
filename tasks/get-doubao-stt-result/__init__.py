@@ -42,6 +42,9 @@ async def main(params: Inputs, context: Context) -> Outputs:
             # Get state from response
             state = result.get("state", "unknown")
 
+            # Print status for debugging
+            print(f"[STT Polling] Attempt {retry_count + 1}/{max_retries} - State: {state}")
+
             # If state is 'processing', continue polling
             if state == "processing":
                 progress = min(int((retry_count / max_retries) * 90), 90)
@@ -56,6 +59,8 @@ async def main(params: Inputs, context: Context) -> Outputs:
             data = result.get("data", {})
             text = data.get("text", "")
             utterances = data.get("utterances", [])
+
+            print(f"[STT Polling] Task completed - State: {state}, Text length: {len(text)} chars, Utterances: {len(utterances)}")
 
             context.report_progress(100)
 
