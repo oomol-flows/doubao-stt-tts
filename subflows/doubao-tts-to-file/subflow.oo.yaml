@@ -157,7 +157,7 @@ inputs_def:
         - zh_male_yangguangqingnian_emo_v2_mars_bigtts
         - zh_female_meilinvyou_emo_v2_mars_bigtts
         - zh_male_shenyeboke_emo_v2_mars_bigtts
-    value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+    value: zh_male_lengkugege_emo_v2_mars_bigtts
     nullable: false
     executor_name: python
   - handle: saved_path
