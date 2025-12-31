@@ -1,6 +1,5 @@
 {
   "1": "下载文件 #1",
-  "12": "上传文件到云端 #1",
   "display-name": "豆包 STT TTS",
   "description": "由 豆包 AI 提供支持的 综合 语音转文本 和 文本转语音 套餐，支持 多种 声音 和 格式。",
   "get-doubao-stt-result": "获取 Doubao STT 结果",
@@ -44,7 +43,7 @@
   "audio-format-of-the-input-file-e-g-mp3-wav-m4a-flac": "输入文件的音频格式（例如 mp3、wav、m4a、flac）",
   "transcribed-text-from-the-audio2": "音频转录文本",
   "word-level-transcription-with-timestamps2": "带有时间戳的单词级转录",
-  "url-doubao-stt": "Url 杜 播 语音 转写",
+  "url-doubao-stt": "Url  Doubao 语音 转写",
   "transcribe-audio-from-url-to-text-using-doubao-stt-directly-proc": "使用 豆包 语音转文字（STT）将音频从 URL 转录为文本。可直接处理通过 URL 访问的音频文件。",
   "url-of-the-audio-file-to-transcribe2": "要转录的音频文件 URL",
   "audio-format-e-g-mp3-wav-m4a2": "音频格式（例如，mp3、wav、m4a）",

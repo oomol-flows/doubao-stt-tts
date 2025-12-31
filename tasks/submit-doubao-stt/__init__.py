@@ -28,22 +28,32 @@ async def main(params: Inputs, context: Context) -> Outputs:
         "format": params["format"]
     }
 
-    response = requests.post(url, json=payload, headers=headers, timeout=30.0)
-    response.raise_for_status()
+    try:
+        response = requests.post(url, json=payload, headers=headers, timeout=1800.0)
+        response.raise_for_status()
 
-    result = response.json()
+        result = response.json()
 
-    # Extract task ID from response
-    # API returns sessionID in the response
-    if "sessionID" in result:
-        task_id = result["sessionID"]
-    elif "data" in result and "sessionID" in result["data"]:
-        task_id = result["data"]["sessionID"]
-    elif "data" in result and "taskId" in result["data"]:
-        task_id = result["data"]["taskId"]
-    elif "taskId" in result:
-        task_id = result["taskId"]
-    else:
-        raise ValueError(f"Unexpected response format: {result}")
+        # Extract task ID from response
+        # API returns sessionID in the response
+        if "sessionID" in result:
+            task_id = result["sessionID"]
+        elif "data" in result and "sessionID" in result["data"]:
+            task_id = result["data"]["sessionID"]
+        elif "data" in result and "taskId" in result["data"]:
+            task_id = result["data"]["taskId"]
+        elif "taskId" in result:
+            task_id = result["taskId"]
+        else:
+            raise ValueError(f"Unexpected response format: {result}")
 
-    return {"task_id": task_id}
+        return {"task_id": task_id}
+
+    except requests.exceptions.Timeout as e:
+        raise TimeoutError(f"Request timeout after 1800 seconds") from e
+
+    except requests.exceptions.HTTPError as e:
+        raise ValueError(f"HTTP Error {response.status_code}: {response.text}") from e
+
+    except requests.exceptions.RequestException as e:
+        raise ConnectionError(f"Request failed: {str(e)}") from e

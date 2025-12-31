@@ -10,7 +10,7 @@ nodes:
           %BD%E7%A4%BE%E4%BC%9A%E5%90%84%E9%98%B6%E7%BA%A7%E7%9A%84%E5%88%86%E6\
           %9E%90.mp3"
         from_node:
-          - node_id: upload-to-cloud#1
+          - node_id: upload-to-cloud#2
             output_handle: remote_url
       - handle: format
         value: "mp3"
@@ -28,14 +28,13 @@ nodes:
         value: 60
       - handle: poll_interval
         value: 2
-  - node_id: upload-to-cloud#1
-    title: "%12%"
+  - node_id: upload-to-cloud#2
+    title: "上传文件到云端 #2"
     inputs_from:
       - handle: file
-        value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
         from_flow:
           - input_handle: file
-    task: upload-to-cloud::upload-to-cloud
+    task: alicloud-oss::upload-to-cloud
 inputs_def:
   - handle: file
     description: "%local-path-to-the-audio-file-to-be-transcribed%"

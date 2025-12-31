@@ -1,1 +1,22 @@
-nodes: []
+nodes:
+  - node_id: doubao-tts-to-file#1
+    title: "Doubao TTS 到文件 #1"
+    inputs_from:
+      - handle: text
+        value: 让我把这段文字读给你听
+      - handle: voice
+        value: zh_female_tianxinxiaomei_emo_v2_mars_bigtts
+      - handle: saved_path
+        value: null
+    subflow: self::doubao-tts-to-file
+  - node_id: file-doubao-stt#1
+    title: "文件 豆包 STT #1"
+    inputs_from:
+      - handle: file
+        value: /oomol-driver/oomol-storage/audio/中国社会各阶级的分析_trimmed.mp3
+        from_node:
+          - node_id: doubao-tts-to-file#1
+            output_handle: saved_path
+      - handle: format
+        value: mp3
+    subflow: self::file-doubao-stt

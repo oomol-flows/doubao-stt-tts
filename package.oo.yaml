@@ -1,4 +1,4 @@
-version: 0.0.2
+version: 0.0.3
 name: doubao_stt_tts
 displayName: "%display-name2%"
 description: "%description2%"
@@ -8,7 +8,7 @@ scripts:
     npm install
     poetry install --no-root
 dependencies:
-  upload-to-cloud: 0.0.5
-  downloader: 0.1.1
+  downloader: 0.1.3
+  alicloud-oss: 0.0.3
 releaseNotes: init
 repository: https://github.com/oomol-flows/doubao-stt-tts.git

@@ -1,6 +1,5 @@
 {
   "1": "Download file #1",
-  "12": "Upload file to cloud #1",
   "display-name": "Doubao STT TTS",
   "description": "Comprehensive speech-to-text and text-to-speech package powered by Doubao AI with multiple voices and formats.",
   "get-doubao-stt-result": "Get Doubao STT Result",

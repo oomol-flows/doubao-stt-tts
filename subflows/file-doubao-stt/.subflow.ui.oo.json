@@ -3,7 +3,7 @@
     "submit-doubao-stt#1": {
       "rfNode": {
         "position": {
-          "x": 972,
+          "x": 902,
           "y": 62.5
         }
       }
@@ -11,12 +11,13 @@
     "get-doubao-stt-result#1": {
       "rfNode": {
         "position": {
-          "x": 1458,
+          "x": 1388,
           "y": 22
         }
       }
     },
-    "upload-to-cloud#1": {
+    "upload-to-cloud#2": {
+      "contentWidth": 350,
       "rfNode": {
         "position": {
           "x": 486,
@@ -37,7 +38,7 @@
     "output": {
       "rfNode": {
         "position": {
-          "x": 1944,
+          "x": 1874,
           "y": 121
         }
       }

@@ -29,12 +29,7 @@ async def main(params: Inputs, context: Context) -> Outputs:
     }
 
     try:
-        response = requests.post(url, json=payload, headers=headers, timeout=30.0)
-
-        # Print response for debugging
-        print(f"[DEBUG] Response status: {response.status_code}")
-        print(f"[DEBUG] Response body: {response.text}")
-
+        response = requests.post(url, json=payload, headers=headers, timeout=1800.0)
         response.raise_for_status()
 
         result = response.json()
@@ -56,7 +51,11 @@ async def main(params: Inputs, context: Context) -> Outputs:
 
         return {"task_id": task_id}
 
+    except requests.exceptions.Timeout as e:
+        raise TimeoutError(f"Request timeout after 1800 seconds") from e
+
     except requests.exceptions.HTTPError as e:
-        error_msg = f"HTTP Error {response.status_code}: {response.text}"
-        print(f"[ERROR] {error_msg}")
-        raise ValueError(error_msg) from e
+        raise ValueError(f"HTTP Error {response.status_code}: {response.text}") from e
+
+    except requests.exceptions.RequestException as e:
+        raise ConnectionError(f"Request failed: {str(e)}") from e

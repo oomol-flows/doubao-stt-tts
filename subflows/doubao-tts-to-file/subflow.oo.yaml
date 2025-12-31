@@ -35,7 +35,10 @@ nodes:
       - handle: saved_path
         value: null
         from_flow:
-          - input_handle: saved_path
+          []
+        from_node:
+          - node_id: +python#2
+            output_handle: saved_path
       - handle: if_existing
         value: override
       - handle: threads_count
@@ -62,6 +65,39 @@ nodes:
       - handle: retry_sleep
         value: 0
     subflow: downloader::file-downloader
+  - node_id: +python#2
+    title: "Python #2"
+    icon: ":logos:python:"
+    task:
+      ui:
+        default_width: 450
+      inputs_def:
+        - handle: saved_path
+          json_schema:
+            type: string
+            ui:widget: save
+            ui:options:
+              excludeAll: true
+              filters:
+                - name: MP3
+                  extensions:
+                    - mp3
+          nullable: true
+      outputs_def:
+        - handle: saved_path
+          json_schema:
+            type: string
+            ui:widget: save
+          nullable: true
+      executor:
+        name: python
+        options:
+          entry: scriptlets/+scriptlet#2.py
+    inputs_from:
+      - handle: saved_path
+        value:
+        from_flow:
+          - input_handle: saved_path
 inputs_def:
   - handle: text
     description: "%text-content-to-convert-to-speech2%"
@@ -128,16 +164,22 @@ inputs_def:
     json_schema:
       type: string
       ui:widget: save
+      ui:options:
+        excludeAll: true
+        filters:
+          - name: MP3
+            extensions:
+              - mp3
     value:
     nullable: true
     executor_name: python
 outputs_def:
   - handle: saved_path
+    description: "%path-of-the-successfully-downloaded-file%"
     json_schema:
       type: string
-      ui:widget: save
+      ui:widget: file
     nullable: false
-    description: "%path-of-the-successfully-downloaded-file%"
     executor_name: python
 outputs_from:
   - handle: saved_path
