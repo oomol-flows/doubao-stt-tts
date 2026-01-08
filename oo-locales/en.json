@@ -50,5 +50,6 @@
   "transcribed-text-from-the-audio3": "Transcribed text from the audio",
   "word-level-transcription-with-timestamps3": "Word-level transcription with timestamps",
   "display-name2": "Doubao STT TTS",
-  "description2": "Comprehensive speech-to-text and text-to-speech package powered by Doubao AI with multiple voices and formats."
+  "description2": "Comprehensive speech-to-text and text-to-speech package powered by Doubao AI with multiple voices and formats.",
+  "output-path-for-saving-the-audio-file": "Output path for saving the audio file (defaults to session directory if not specified)"
 }

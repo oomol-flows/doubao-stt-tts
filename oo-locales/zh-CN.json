@@ -50,5 +50,6 @@
   "transcribed-text-from-the-audio3": "从音频转录的文本",
   "word-level-transcription-with-timestamps3": "带时间戳的单词级转录",
   "display-name2": "豆包 STT TTS",
-  "description2": "由 豆包 AI 驱动的全面语音转文字和文字转语音套装，支持多种语音和格式。"
+  "description2": "由 豆包 AI 驱动的全面语音转文字和文字转语音套装，支持多种语音和格式。",
+  "output-path-for-saving-the-audio-file": "音频文件的保存路径（未指定时默认保存到会话目录）"
 }

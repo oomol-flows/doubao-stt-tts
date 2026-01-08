@@ -161,6 +161,7 @@ inputs_def:
     nullable: false
     executor_name: python
   - handle: saved_path
+    description: "%output-path-for-saving-the-audio-file%"
     json_schema:
       type: string
       ui:widget: save
