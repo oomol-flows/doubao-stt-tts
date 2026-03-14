@@ -32,17 +32,6 @@
   "text-content-to-convert-to-speech2": "要转换为语音的文本内容",
   "voice-selection-for-text-to-speech2": "文本转语音的语音选择",
   "path-of-the-successfully-downloaded-file": "成功下载文件的路径",
-  "doubao-tts-to-url": "豆包 TTS 到 Url",
-  "convert-text-to-speech-using-doubao-tts-and-return-the-audio-url": "使用 Doubao TTS 将文本转换为语音并返回音频 URL。支持多种中文和英文语音选项。",
-  "text-content-to-convert-to-speech3": "要转换为语音的文本内容",
-  "voice-selection-for-text-to-speech3": "文本转语音的语音选择",
-  "url-of-the-generated-audio-file2": "生成的音频文件 的 URL",
-  "file-doubao-stt": "文件 豆包 STT",
-  "converts-audio-files-to-text-using-doubao-speech-to-text-api-tak": "使用 豆包 语音 转文字 API 将 音频 文件 转换 为 文本。将 本地 音频 文件 上传 到 云 存储，提交 转写 请求，并 返回 完整 的 转写 文本 及 单词 级 时间戳。",
-  "local-path-to-the-audio-file-to-be-transcribed": "要转录的音频文件的本地路径",
-  "audio-format-of-the-input-file-e-g-mp3-wav-m4a-flac": "输入文件的音频格式（例如 mp3、wav、m4a、flac）",
-  "transcribed-text-from-the-audio2": "音频转录文本",
-  "word-level-transcription-with-timestamps2": "带有时间戳的单词级转录",
   "url-doubao-stt": "Url  Doubao 语音 转写",
   "transcribe-audio-from-url-to-text-using-doubao-stt-directly-proc": "使用 豆包 语音转文字（STT）将音频从 URL 转录为文本。可直接处理通过 URL 访问的音频文件。",
   "url-of-the-audio-file-to-transcribe2": "要转录的音频文件 URL",
@@ -51,5 +40,8 @@
   "word-level-transcription-with-timestamps3": "带时间戳的单词级转录",
   "display-name2": "豆包 STT TTS",
   "description2": "由 豆包 AI 驱动的全面语音转文字和文字转语音套装，支持多种语音和格式。",
-  "output-path-for-saving-the-audio-file": "音频文件的保存路径（未指定时默认保存到会话目录）"
+  "output-path-for-saving-the-audio-file": "音频文件的保存路径（未指定时默认保存到会话目录）",
+  "doubao-tts-1": "Doubao TTS 到文件 #1",
+  "url-doubao-stt-1": "Url Doubao STT #1\n\nUrl Doubao 语音转文字 #1",
+  "python-2": "Python 第 2 号"
 }

@@ -32,17 +32,6 @@
   "text-content-to-convert-to-speech2": "Text content to convert to speech",
   "voice-selection-for-text-to-speech2": "Voice selection for text-to-speech",
   "path-of-the-successfully-downloaded-file": "Path of the successfully downloaded file",
-  "doubao-tts-to-url": "Doubao TTS To Url",
-  "convert-text-to-speech-using-doubao-tts-and-return-the-audio-url": "Convert text to speech using Doubao TTS and return the audio URL. Supports multiple voice options in Chinese and English.",
-  "text-content-to-convert-to-speech3": "Text content to convert to speech",
-  "voice-selection-for-text-to-speech3": "Voice selection for text-to-speech",
-  "url-of-the-generated-audio-file2": "URL of the generated audio file",
-  "file-doubao-stt": "File Doubao STT",
-  "converts-audio-files-to-text-using-doubao-speech-to-text-api-tak": "Converts audio files to text using Doubao Speech-to-Text API. Takes a local audio file, uploads it to cloud storage, submits it for transcription, and returns both the full transcribed text and word-level timestamps.",
-  "local-path-to-the-audio-file-to-be-transcribed": "Local path to the audio file to be transcribed",
-  "audio-format-of-the-input-file-e-g-mp3-wav-m4a-flac": "Audio format of the input file (e.g., mp3, wav, m4a, flac)",
-  "transcribed-text-from-the-audio2": "Transcribed text from the audio",
-  "word-level-transcription-with-timestamps2": "Word-level transcription with timestamps",
   "url-doubao-stt": "Url Doubao STT",
   "transcribe-audio-from-url-to-text-using-doubao-stt-directly-proc": "Transcribe audio from URL to text using Doubao STT. Directly processes audio files accessible via URL.",
   "url-of-the-audio-file-to-transcribe2": "URL of the audio file to transcribe",
@@ -51,5 +40,8 @@
   "word-level-transcription-with-timestamps3": "Word-level transcription with timestamps",
   "display-name2": "Doubao STT TTS",
   "description2": "Comprehensive speech-to-text and text-to-speech package powered by Doubao AI with multiple voices and formats.",
-  "output-path-for-saving-the-audio-file": "Output path for saving the audio file (defaults to session directory if not specified)"
+  "output-path-for-saving-the-audio-file": "Output path for saving the audio file (defaults to session directory if not specified)",
+  "doubao-tts-1": "Doubao TTS to file #1",
+  "url-doubao-stt-1": "Url Doubao STT #1",
+  "python-2": "Python #2"
 }

@@ -3,15 +3,15 @@
     "submit-doubao-stt#1": {
       "rfNode": {
         "position": {
-          "x": 0,
-          "y": 0
+          "x": 486,
+          "y": 40.5
         }
       }
     },
     "get-doubao-stt-result#1": {
       "rfNode": {
         "position": {
-          "x": 600,
+          "x": 972,
           "y": 0
         }
       }
@@ -22,15 +22,15 @@
       "rfNode": {
         "position": {
           "x": 0,
-          "y": -500
+          "y": 99
         }
       }
     },
     "output": {
       "rfNode": {
         "position": {
-          "x": 1000,
-          "y": -500
+          "x": 1458,
+          "y": 99
         }
       }
     }
