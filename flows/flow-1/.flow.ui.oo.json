@@ -3,16 +3,16 @@
     "doubao-tts-to-file#1": {
       "rfNode": {
         "position": {
-          "x": 159,
-          "y": 146
+          "x": 162,
+          "y": 88
         }
       }
     },
     "url-doubao-stt#1": {
       "rfNode": {
         "position": {
-          "x": 829,
-          "y": 146
+          "x": 718,
+          "y": 88
         }
       }
     }
